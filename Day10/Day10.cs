@@ -2,8 +2,8 @@
 
 var stopWatch = Stopwatch.StartNew();
 
-var pairs = new Dictionary<char, char>(4) { { '(', ')' }, { '<', '>' }, { '[', ']' }, { '{', '}' } };
-var syntaxErrorScores = new Dictionary<char, int>(4) { { ')', 3 }, { ']', 57 }, { '}', 1197 }, { '>', 25137 } };
+var pairs = new Dictionary<char, char>(4) { ['('] = ')', ['<'] = '>', ['['] = ']', ['{'] = '}' };
+var syntaxErrorScores = new Dictionary<char, int>(4) { [')'] = 3, [']'] = 57, ['}'] = 1197, ['>'] = 25137 };
 var autoCompleteScores = new List<char>(4) { ')', ']', '}', '>' };
 var fixScores = new List<long>();
 

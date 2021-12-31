@@ -67,8 +67,8 @@ long CalculateTotals()
     elements[template[0]]++;
     elements[template[^1]]++;
 
-    var totals = elements.Values.ToList();
-    totals.Sort();
+    var totals = elements.Values.ToArray();
+    Array.Sort(totals);
 
     return (totals[^1] /= 2) - (totals[0] /= 2);
 }

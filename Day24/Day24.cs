@@ -120,10 +120,10 @@ static string LowestModelNumber(string[] mainProgram)
 static int Decode(string[] mainProgram, int step, char inputDigit, int startValue)
 {
     var register = new Dictionary<char, int>(4) {
-        { 'w', inputDigit - 48 },
-        { 'x', 0 },
-        { 'y', 0 },
-        { 'z', startValue }
+        ['w'] = inputDigit - 48,
+        ['x'] = 0,
+        ['y'] = 0,
+        ['z'] = startValue
     };
 
     // Only execute the part that covers the current digit

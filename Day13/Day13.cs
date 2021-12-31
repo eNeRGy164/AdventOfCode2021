@@ -80,8 +80,6 @@ record struct Instruction(char Axis, int Value);
 
 record struct Dot(int X, int Y) : IComparable<Dot>
 {
-    static readonly Comparer<int> comparer = Comparer<int>.Default;
-
     public Dot Fold(Instruction instruction) =>
         instruction.Axis switch
         {
@@ -95,8 +93,8 @@ record struct Dot(int X, int Y) : IComparable<Dot>
 
     public int CompareTo(Dot other)
     {
-        var value = comparer.Compare(Y, other.Y);
+        var value = Y.CompareTo(other.Y);
 
-        return value != 0 ? value : comparer.Compare(X, other.X);
+        return value != 0 ? value : X.CompareTo(other.X);
     }
 }

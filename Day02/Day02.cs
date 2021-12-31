@@ -7,7 +7,7 @@ var depth1 = 0;
 var depth2 = 0;
 var aim = 0;
 
-foreach (ReadOnlySpan<char> line in input)
+foreach (var line in input)
 {
     var instruction = line[0]; // Only f(orward), d(own), u(p)
     var value = line[^1] - 48; // Only 1 .. 9

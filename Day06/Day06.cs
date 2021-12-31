@@ -42,7 +42,7 @@ long Sum()
 {
     var total = 0L;
 
-    for (int i = 0; i < 9; i++)
+    for (var i = 0; i < 9; i++)
     {
         total += school[i];
     }

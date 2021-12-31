@@ -77,14 +77,15 @@ void Explore(in Node node, in string path, in string? smallCaveTwice = null)
     }
 }
 
-sealed record Node(string Name) : IEquatable<Node>
+record Node(string Name) : IEquatable<Node>
 {
     public bool IsStart { get; init; } = Name == "start";
     public bool IsEnd { get; init; } = Name == "end";
     public bool IsSmall { get; init; } = char.IsLower(Name[0]);
+
     public List<Node> Relations { get; } = new List<Node>(5);
 
-    public bool Equals(Node? other) => Name.Equals(other?.Name);
+    public virtual bool Equals(Node? other) => Name.Equals(other?.Name);
 
     public override int GetHashCode() => Name.GetHashCode();
 }

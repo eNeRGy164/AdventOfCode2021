@@ -56,8 +56,8 @@ foreach ((var from, var to) in values)
         {
             var point = to with { X = x };
 
-            if (!firstHitsPart1.Add(point)) { secondHitsPart1.Add(point); }
-            if (!firstHitsPart2.Add(point)) { secondHitsPart2.Add(point); }
+            if (!firstHitsPart1.Add(point)) secondHitsPart1.Add(point);
+            if (!firstHitsPart2.Add(point)) secondHitsPart2.Add(point);
         }
     }
     else
@@ -71,7 +71,7 @@ foreach ((var from, var to) in values)
             var newY = ((from.Y - to.Y) < 0) ? from.Y + l : from.Y - l;
 
             var point = new Point(newX, newY);
-            if (!firstHitsPart2.Add(point)) { secondHitsPart2.Add(point); }
+            if (!firstHitsPart2.Add(point)) secondHitsPart2.Add(point);
         }
     }
 }

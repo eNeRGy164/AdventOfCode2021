@@ -9,7 +9,7 @@ for (var i = 0; i < numbers.Length; i++)
     drawNumbers[i] = int.Parse(numbers[i]);
 }
 
-var boardCount = (input.Length - 1) / 6; // Each board is five lines with an empty line following
+var boardCount = (input.Length - 1) / 6; // Each board is five lines followed by an empty line
 var boards = new List<Board>(boardCount);
 for (var i = 0; i < boardCount; i++)
 {
@@ -56,7 +56,7 @@ Console.WriteLine($"{stopWatch.ElapsedMilliseconds}ms");
 Console.WriteLine($"Part 1: {part1}");
 Console.WriteLine($"Part 2: {part2}");
 
-record class Board
+class Board
 {
     readonly Number[,] numbers = new Number[5, 5];
 
